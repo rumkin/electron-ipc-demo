@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>IPC</title>
+  </head>
+  <body>
+    <h1>IPC</h1>
+    <p>Example</p>
+    <button>Send</button>
+    <script language="javascript">
+      const state = {counter: 0};
+      document.querySelector('button').addEventListener(
+        'click', () => {
+          state.counter++;
+          window.postMessage(state, '*');
+        },
+      );
+      console.log('READY', window.preload);
+    </script>
+  </body>
+</html>
